@@ -1,0 +1,17 @@
+#createListBox{
+    background-color:cyan;
+    padding:5px;
+}
+#listBoxBody{
+    background-color: dodgerblue;
+    padding:5px;
+}
+.list{
+    background-color:deepskyblue;
+    padding:5px;
+}
+.task{
+    background-color:aliceblue;
+    padding:5px;
+
+}

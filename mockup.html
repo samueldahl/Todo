@@ -19,13 +19,17 @@
     <div id="listBoxBody">
         <div id="listBox1" class="list">
             <h3>List Title Goes Here</h3>
+            <button onclick="addTask()">Add Task</button>
+            <button onclick="markListComplete()">Mark List Complete</button>
+            <button onclick="deleteList()">Delete List</button>
+
             <div id="taskA1" class="task">
                 <h4>
                     task name goes here
                 </h4>
-                <button onclick="#">Edit Task</button>
-                <button onclick="#">mark complete</button>
-                <button onclick="#">Delete Task</button>
+                <button onclick="editTask()">Edit Task</button>
+                <button onclick="markTaskComplete()">Mark Task Complete</button>
+                <button onclick="deleteTask()">Delete Task</button>
 
             </div>
         </div>

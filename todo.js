@@ -1,7 +1,16 @@
 
 //For the list creator section
 function addList(){
-
+    var listName = document.getElementById("listName").value;
+    console.log(listName);
+    $("#listBox").append(
+        '<div id="listBox1" class="list">\n' +
+        '            <h3>' +listName+  '</h3>\n' +
+        '            <button onclick="addTask()">Add Task</button>\n' +
+        '            <button onclick="markListComplete()">Mark List Complete</button>\n' +
+        '            <button onclick="deleteList(this)">Delete List</button>\n' +
+        '        </div>'
+    );
 }
 function clearCompleteLists(){
 
@@ -9,12 +18,27 @@ function clearCompleteLists(){
 
 //For every actual list
 function addTask(){
+    var taskName = prompt("Name your task!");
+    $("#listBox").append(
+    '<div id="taskA1" class="task">\n' +
+    '                <h4>\n' +
+    '                    '+taskName+'\n' +
+    '                </h4>\n' +
+    '                <button onclick="editTask()">Edit Task</button>\n' +
+    '                <button onclick="markTaskComplete()">Mark Task Complete</button>\n' +
+    '                <button onclick="deleteTask()">Delete Task</button>\n' +
+    '\n' +
+    '            </div>'
+
+
+)
 
 }
 function markListComplete(){
 
 }
-function deleteList(){
+function deleteList(element){
+    $(element).parent().hide();
 
 }
 

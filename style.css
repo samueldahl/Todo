@@ -11,7 +11,16 @@
     padding:5px;
 }
 .task{
-    background-color:aliceblue;
+    background-color:white;
     padding:5px;
 
+}
+.taskInput{
+    border:0px;
+}
+.dankMemes{
+    background-color:red;
+}
+.normieMemes{
+    background-color:red;
 }

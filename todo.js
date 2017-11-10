@@ -1,32 +1,37 @@
+var uniqueId = 0;
+
+function clearCompleteTasks(){
+    $(".dankMemes").parent().hide();
+}
 
 //For the list creator section
 function addList(){
+    uniqueId ++;
     var listName = document.getElementById("listName").value;
     console.log(listName);
-    $("#listBox").append(
-        '<div id="listBox1" class="list">\n' +
+    $("#listBoxBody").append(
+        '<div id="" class="list ">\n' +
         '            <h3>' +listName+  '</h3>\n' +
-        '            <button onclick="addTask()">Add Task</button>\n' +
-        '            <button onclick="markListComplete()">Mark List Complete</button>\n' +
+        '            <button onclick="addTask('+ uniqueId +')">Add Task</button>\n' +
+        '            <button id="ab'+ uniqueId +'" onclick="markListComplete('+uniqueId+')">Mark List Complete</button>\n' +
         '            <button onclick="deleteList(this)">Delete List</button>\n' +
-        '        </div>'
+        '            <div id="listBox'+uniqueId+'"></div>\n'+
+        '</div>'
     );
 }
 function clearCompleteLists(){
-
+    $(".normieMemes").parent().hide();
 }
 
 //For every actual list
-function addTask(){
+function addTask(uniqueListId){
+    uniqueId ++;
     var taskName = prompt("Name your task!");
-    $("#listBox").append(
-    '<div id="taskA1" class="task">\n' +
-    '                <h4>\n' +
-    '                    '+taskName+'\n' +
-    '                </h4>\n' +
-    '                <button onclick="editTask()">Edit Task</button>\n' +
-    '                <button onclick="markTaskComplete()">Mark Task Complete</button>\n' +
-    '                <button onclick="deleteTask()">Delete Task</button>\n' +
+    $("#listBox" + uniqueListId).append(
+    '<div id="task" class="task">\n' +
+    '                <input class="taskInput" value="' + taskName + '">\n' +
+    '                <button id="ab'+ uniqueId +'" onclick="markTaskComplete('+uniqueId+')">Mark Task Complete</button>\n' +
+    '                <button onclick="deleteTask(this)">Delete Task</button>\n' +
     '\n' +
     '            </div>'
 
@@ -34,8 +39,8 @@ function addTask(){
 )
 
 }
-function markListComplete(){
-
+function markListComplete(taskId){
+    $("#ab"+taskId).addClass("normieMemes");
 }
 function deleteList(element){
     $(element).parent().hide();
@@ -43,14 +48,12 @@ function deleteList(element){
 }
 
 //For every actual task
-function editTask(){
+function markTaskComplete(taskId){
+    $("#ab"+taskId).addClass("dankMemes");
 
 }
-function markTaskComplete(){
-
-}
-function deleteTask(){
-
+function deleteTask(element){
+    $(element).parent().hide();
 }
 
 

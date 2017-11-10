@@ -1,5 +1,4 @@
 var uniqueId = 0;
-
 function clearCompleteTasks(){
     $(".dankMemes").parent().hide();
 }
@@ -34,11 +33,7 @@ function addTask(uniqueListId){
     '                <button onclick="deleteTask(this)">Delete Task</button>\n' +
     '\n' +
     '            </div>'
-
-
-)
-
-}
+)}
 function markListComplete(taskId){
     $("#ab"+taskId).addClass("normieMemes");
 }
@@ -46,7 +41,6 @@ function deleteList(element){
     $(element).parent().hide();
 
 }
-
 //For every actual task
 function markTaskComplete(taskId){
     $("#ab"+taskId).addClass("dankMemes");
